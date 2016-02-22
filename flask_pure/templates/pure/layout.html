@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html {% block html_attribs %}{% endblock html_attribs %}>
+  <head>
+    {%- block head %}
+    {%- block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%- endblock meta %}
+    <title>{% block title %}{% endblock title %}</title>
+    {%- block style %}
+    {{ purecss_stylesheets }}
+    {%- endblock style %}
+    {%- endblock head %}
+  </head>
+  <body {% block body_attribs %}{% endblock body_attribs %}>
+    {%- block body %}
+    {%- block nav %}{% endblock nav %}
+    {%- block content %}{% endblock content %}
+    {%- block script %}{% endblock script %}
+    {%- endblock body %}
+  </body>
+</html>
