@@ -54,7 +54,7 @@ tox:
 	tox
 
 quality:
-	flake8 flask_pure
+	flake8 flask_pure tests
 
 clean:
 	cd $(DOCS_DIR) && $(MAKE) clean

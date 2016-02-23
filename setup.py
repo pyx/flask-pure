@@ -31,6 +31,9 @@ setup(
     install_requires=[
         'Flask>=0.10',
     ],
+    extras_require={
+        'test': ['pytest>=2.8.2'],
+    },
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
