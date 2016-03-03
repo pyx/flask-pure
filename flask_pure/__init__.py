@@ -5,7 +5,7 @@
 
 from flask import Blueprint, Markup, current_app, url_for
 
-__version__ = '0.2.dev0'
+__version__ = '0.2'
 __all__ = ['Pure']
 
 CDN_PREFIX = 'http://yui.yahooapis.com/pure/0.6.0/'
