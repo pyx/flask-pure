@@ -29,6 +29,7 @@ Quick Start
     from flask.ext.pure import Pure
 
     app = Flask(__name__)
+    app.config['PURECSS_RESPONSIVE_GRIDS'] = True
     app.config['PURECSS_USE_CDN'] = True
     app.config['PURECSS_USE_MINIFIED'] = True
     Pure(app)
@@ -60,6 +61,20 @@ Quick Start
 
 
 3. Profit!
+
+
+How It Works
+============
+
+Once registered, this extension provides a template variable called
+:code:`pure`, it has a property named :code:`css` that will be rendered
+as HTML :code:`<link>` tag to the Pure.css stylesheets either from free CDN or
+be served from a bundled blueprint, also called :code:`pure`.
+
+A :code:`{{ pure.css }}` inside :code:`<head>` tag is all you need.
+
+A bare bone HTML5 template is also available as :code:`pure/layout.html`.
+Please check out the example in code repository and documentation for details.
 
 
 License
