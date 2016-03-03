@@ -5,6 +5,9 @@ from flask.ext.pure import Pure
 
 app = Flask(__name__)
 
+# Including the responsive grids module, this is the default value
+app.config['PURECSS_RESPONSIVE_GRIDS'] = True
+
 # Using external CDN links, this is the default value
 app.config['PURECSS_USE_CDN'] = True
 
