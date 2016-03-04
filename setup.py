@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 import re
-import sys
 from os import path
 from setuptools import setup
 
 ROOT_DIR = path.abspath(path.dirname(__file__))
-sys.path.insert(0, ROOT_DIR)
 
 DESCRIPTION = 'Flask-Pure - a Flask extension for Pure.css'
 LONG_DESCRIPTION = open(path.join(ROOT_DIR, 'README.rst')).read()
@@ -48,6 +46,7 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
