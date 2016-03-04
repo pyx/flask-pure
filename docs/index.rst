@@ -56,6 +56,12 @@ Predefined Blocks    Purpose
 ==================== =====================================================
 
 
+Pure.css Version
+================
+
+The bundled version of Pure.css is v0.6.0
+
+
 API
 ===
 
