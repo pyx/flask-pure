@@ -23,10 +23,10 @@ help:
 	@echo '  clean        : remove files created by other targets.'
 
 install:
-	pip install .
+	pip install --upgrade .
 
 dev-install:
-	pip install -e .
+	pip install --upgrade -e .[test]
 
 docs: doc-html doc-pdf
 
