@@ -26,7 +26,7 @@ Quick Start
   .. code-block:: python
 
     from flask import Flask, render_template
-    from flask.ext.pure import Pure
+    from flask_pure import Pure
 
     app = Flask(__name__)
     app.config['PURECSS_RESPONSIVE_GRIDS'] = True

@@ -1,6 +1,6 @@
 import flask
 
-from flask.ext.pure import Pure
+from flask_pure import Pure
 
 
 def create_client(use_cdn=None, use_minified=None, responsive=None):
