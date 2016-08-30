@@ -69,6 +69,12 @@ API
   :members:
 
 
+Contributors
+============
+
+.. include:: ../AUTHORS
+
+
 Changelog
 =========
 

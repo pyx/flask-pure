@@ -18,7 +18,7 @@ setup(
     version=VERSION,
     url='https://github.com/pyx/flask-pure/',
     license='BSD-New',
-    author='Philip Xu',
+    author='Philip Xu and contributors',
     author_email='pyx@xrefactor.com',
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,

@@ -18,8 +18,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'Flask-Pure'
-copyright = u'2016, Philip Xu'
-author = u'Philip Xu'
+copyright = u'2016, Philip Xu and contributors'
+author = u'Philip Xu and contributors'
 
 release = flask_pure.__version__
 version = release.rsplit('.', 1)[0]

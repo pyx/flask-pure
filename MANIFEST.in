@@ -1,5 +1,6 @@
 recursive-include flask_pure/static *
 recursive-include flask_pure/templates *.html
+include AUTHORS
 include LICENSE
 include Makefile
 include README.rst
