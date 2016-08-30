@@ -79,6 +79,12 @@ Changelog
 =========
 
 
+Version 0.3
+-----------
+
+- Switched CDN url to https version (Contributed by Bastian Kuhn)
+
+
 Version 0.2
 -----------
 
