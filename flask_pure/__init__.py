@@ -8,7 +8,7 @@ from flask import Blueprint, Markup, current_app, url_for
 __version__ = '0.3.dev0'
 __all__ = ['Pure']
 
-CDN_PREFIX = 'http://yui.yahooapis.com/pure/0.6.0/'
+CDN_PREFIX = 'https://yui-s.yahooapis.com/pure/0.6.0/'
 LINK_TEMPLATE = '<link rel="stylesheet" href="%s.css">'
 
 
