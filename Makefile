@@ -44,7 +44,7 @@ release: quality tox
 	@echo "Tagging release version $(VERSION), abort if already exists."
 	hg tag $(VERSION)
 	@echo "Generating package."
-	python setup.py sdist upload --sign
+	python setup.py sdist bdist_wheel
 	@echo "Uploading to PyPI."
 	twine upload --sign dist/*
 	@echo "Done."
