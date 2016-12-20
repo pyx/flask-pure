@@ -6,7 +6,7 @@
 
 from flask import Blueprint, Markup, current_app, url_for
 
-__version__ = '0.4.dev0'
+__version__ = '0.4'
 __all__ = ['Pure']
 
 LINK_TEMPLATE = (
