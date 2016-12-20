@@ -11,6 +11,9 @@ app.config['PURECSS_RESPONSIVE_GRIDS'] = True
 # Using external CDN links, this is the default value
 app.config['PURECSS_USE_CDN'] = True
 
+# Using unpkg CDN, this is the default value (recommended by Pure.css)
+app.config['PURECSS_CDN'] = 'unpkg'
+
 # Serving minified version, this is the default value
 app.config['PURECSS_USE_MINIFIED'] = True
 
