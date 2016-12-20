@@ -28,10 +28,32 @@ Option                           Description
                                  from CDN. If :code:`False`, local copies of
                                  css files will be served.  Default value is
                                  :code:`True`
+:code:`PURECSS_CDN`              If `PURECSS_USE_CDN` is `True`, css files will
+                                 be served from this CDN.  Default value is
+                                 :code:`unpkg`, as recommended by Pure.css, for
+                                 list of CDNs, see next section
 :code:`PURECSS_USE_MINIFIED`     If :code:`True`, the minified version of css
                                  files will be used.  Default value is
                                  :code:`True`
 ================================ =============================================
+
+
+PURECSS_CDN values
+------------------
+
+Available CDNs as listed on http://purecss.io/
+
+========== =================
+CDN        PURECSS_CDN Value
+========== =================
+unpkg      unpkg
+cdnjs      cdnjs
+jsDelivr   jsdelivr
+KeyCDN     keycdn
+OSS MaxCDN maxcdn
+RawGit     rawgit
+Staticfile staticfile
+========== =================
 
 
 Template
@@ -59,7 +81,7 @@ Predefined Blocks    Purpose
 Pure.css Version
 ================
 
-The bundled version of Pure.css is v0.6.0
+The bundled version of Pure.css is v0.6.1
 
 
 API
@@ -77,6 +99,13 @@ Contributors
 
 Changelog
 =========
+
+
+Version 0.4
+-----------
+
+- Updated Pure.css version to 0.6.1
+- Added alternate CDNs support
 
 
 Version 0.3

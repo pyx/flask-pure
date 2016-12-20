@@ -43,8 +43,10 @@ release: quality tox
 	hg commit -m 'Bumped version number to $(VERSION)'
 	@echo "Tagging release version $(VERSION), abort if already exists."
 	hg tag $(VERSION)
-	@echo "Uploading to PyPI."
+	@echo "Generating package."
 	python setup.py sdist upload --sign
+	@echo "Uploading to PyPI."
+	twine upload --sign dist/*
 	@echo "Done."
 
 test:
