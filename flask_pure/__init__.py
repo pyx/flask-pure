@@ -9,8 +9,38 @@ from flask import Blueprint, Markup, current_app, url_for
 __version__ = '0.4.dev0'
 __all__ = ['Pure']
 
-CDN_PREFIX = 'https://yui-s.yahooapis.com/pure/0.6.0/'
-LINK_TEMPLATE = '<link rel="stylesheet" href="%s.css">'
+LINK_TEMPLATE = (
+    '<link rel="stylesheet" href="{URI}" '
+    'integrity="{HASH}" crossorigin="anonymous">')
+
+PURE_VERSION = '0.6.1'
+
+# SRI hash (without prefix 'sha384-') can be generated with:
+# cat CSS_FILE | openssl dgst -sha384 -binary | openssl enc -base64 -A
+SRI_HASH = {
+    'pure.css':
+    'sha384-QBtdI61Wy+ikCpWa4q1qr13NIcHPZ54RQOKg9pjUVmuG0IWd5u5el/Md3Kdr8Bts',
+
+    'pure-min.css':
+    'sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY',
+
+    'grids-responsive.css':
+    'sha384-p3KDYWuAiuJGRrYoXWvd9rCsP0Qn4B/hOJEF/6s+aJ/b7b0bFXhKYhxDJJecys7v',
+
+    'grids-responsive-min.css':
+    'sha384-XFOTHpTomywMwwGi19rYAmPxQVsd5yzo5Hmx37ZfFQgXj+v9UnjfCvaS7B7WRWyp',
+}
+
+# CDN hosts as listed on http://purecss.io/
+HOST = {
+    'unpkg': 'https://unpkg.com/purecss@{VERSION}/build/{FILENAME}',
+    'cdnjs': '//cdnjs.cloudflare.com/ajax/libs/pure/{VERSION}/{FILENAME}',
+    'jsdelivr': '//cdn.jsdelivr.net/pure/{VERSION}/{FILENAME}',
+    'keycdn': '//opensource.keycdn.com/pure/{VERSION}/{FILENAME}',
+    'maxcdn': '//oss.maxcdn.com/libs/pure/{VERSION}/{FILENAME}',
+    'rawgit': '//cdn.rawgit.com/yahoo/pure-release/v{VERSION}/{FILENAME}',
+    'staticfile': 'http://cdn.staticfile.org/pure/{VERSION}/{FILENAME}',
+}
 
 
 class Pure(object):
@@ -33,6 +63,7 @@ class Pure(object):
         """
         app.config.setdefault('PURECSS_RESPONSIVE_GRIDS', True)
         app.config.setdefault('PURECSS_USE_CDN', True)
+        app.config.setdefault('PURECSS_CDN', 'unpkg')
         app.config.setdefault('PURECSS_USE_MINIFIED', True)
 
         pure = Blueprint(
@@ -61,10 +92,20 @@ class Pure(object):
         if current_app.config['PURECSS_USE_MINIFIED']:
             stylesheets = [ss + '-min' for ss in stylesheets]
 
+        stylesheets = [ss + '.css' for ss in stylesheets]
+
         if current_app.config['PURECSS_USE_CDN']:
-            stylesheets = [CDN_PREFIX + ss for ss in stylesheets]
+            host_tpl = HOST[current_app.config['PURECSS_CDN']]
+            stylesheets = [
+                (ss, host_tpl.format(VERSION=PURE_VERSION, FILENAME=ss))
+                for ss in stylesheets]
         else:
             stylesheets = [
-                url_for('pure.static', filename=ss) for ss in stylesheets]
+                (ss, url_for('pure.static', filename=ss))
+                for ss in stylesheets]
 
-        return Markup('\n'.join(LINK_TEMPLATE % ss for ss in stylesheets))
+        link = '\n'.join(
+            LINK_TEMPLATE.format(URI=uri, HASH=SRI_HASH[ss])
+            for ss, uri in stylesheets)
+
+        return Markup(link)
