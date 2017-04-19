@@ -13,22 +13,22 @@ LINK_TEMPLATE = (
     '<link rel="stylesheet" href="{URI}" '
     'integrity="{HASH}" crossorigin="anonymous">')
 
-PURE_VERSION = '0.6.1'
+PURE_VERSION = '0.6.2'
 
 # SRI hash (without prefix 'sha384-') can be generated with:
 # cat CSS_FILE | openssl dgst -sha384 -binary | openssl enc -base64 -A
 SRI_HASH = {
     'pure.css':
-    'sha384-QBtdI61Wy+ikCpWa4q1qr13NIcHPZ54RQOKg9pjUVmuG0IWd5u5el/Md3Kdr8Bts',
+    'sha384-OYXprigzIkL5A8NYjaTSjoecOKdC6/DYPNjtqrH7I2MHk1zfIH3vp9HT6TFqc/iq',
 
     'pure-min.css':
-    'sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY',
+    'sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD',
 
     'grids-responsive.css':
-    'sha384-p3KDYWuAiuJGRrYoXWvd9rCsP0Qn4B/hOJEF/6s+aJ/b7b0bFXhKYhxDJJecys7v',
+    'sha384-SeAEgbp6ODPt7Rh/d7erAp3WrQ2ojLjMO8lqnloLCSd26RTw1cXpRa5t3sky8tpO',
 
     'grids-responsive-min.css':
-    'sha384-XFOTHpTomywMwwGi19rYAmPxQVsd5yzo5Hmx37ZfFQgXj+v9UnjfCvaS7B7WRWyp',
+    'sha384-CmddieRjd1Gna649g1RmBGcwBnglQv5b+JmQpfWH6GXTpiC0fhHvhEn1x8Bkfjc4',
 }
 
 # CDN hosts as listed on http://purecss.io/

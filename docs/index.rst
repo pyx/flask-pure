@@ -81,7 +81,7 @@ Predefined Blocks    Purpose
 Pure.css Version
 ================
 
-The bundled version of Pure.css is v0.6.1
+The bundled version of Pure.css is v0.6.2
 
 
 API
@@ -99,6 +99,12 @@ Contributors
 
 Changelog
 =========
+
+
+Version 0.5
+-----------
+
+- Updated Pure.css version to 0.6.2
 
 
 Version 0.4
